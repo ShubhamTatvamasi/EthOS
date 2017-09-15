@@ -7,11 +7,12 @@ proxypool2 etc-eu1.nanopool.org:19999
 flags --cl-global-work 16387 --farm-recheck 200
 globalfan 85
 globalmem 4900
+autoreboot false
 
-# v 1.1
 # ethOS Pool: ethosdistro.com/pool
 #
 # QUICK START GUIDE: ethosdistro.com/kb/#quick-start-guide
+# HOSTING YOUR OWN REMOTE CONFIG WITH CONFIGMAKER.COM: ethosdistro.com/kb/#configmaker
 #
 # Read the ethOS knowledge base, a useful guide to getting set up: ethosdistro.com/kb
 # Read the ethOS changelog for version information and latest changes: ethosdistro.com/changelog
@@ -20,7 +21,7 @@ globalmem 4900
 # NOTE: There is no email or skype support for ethOS. Please see the 'Getting Support' section of the ethOS knowledge base.
 # WARNING: Using apt-get to upgrade, update, and/or install packages is unsupported and will likely break ethOS.
 #
-# GLOBAL CONFIG SETTINGS THAT APPLY TO ALL RIGS, ALSO WORKS IN SINGLE RIG MODE
+# GLOBAL CONFIG SETTINGS THAT APPLY TO ALL RIGS
 # SAMPLE FORMAT: 
 # [type] [value]
 # ------------------------------------------------------
@@ -30,12 +31,13 @@ globalmem 4900
 # proxywallet 0x0bdC4F12fB57d3acA9C3cF72B7AA2789A20d27f2
 # proxypool1 us1.ethermine.org:4444
 # proxypool2 us2.ethermine.org:4444
-# flags --farm-recheck 200
+# poolpass1 x
+# poolpass2 x
+# flags --cl-global-work 8192 --farm-recheck 200
 # globalcore 1000
 # globalmem 1250
 # globalfan 90
 # globalpowertune 20
-autoreboot true
 # custompanel publicsecret
 # lockscreen enabled
 # globaldesktop disabled
@@ -44,12 +46,15 @@ autoreboot true
 # EXPLANATION OF SETTINGS THAT APPLY TO ALL RIGS
 # If using "pool" parameter, write WORKER (a placeholder variable) in place of rig name (i.e. NOT rig1, myrig, home, warehouse2, etc).
 #
-# globalminer:		set global miner (ethminer, sgminer-gm, claymore, claymore-zcash, optiminer-zcash, sgminer-gm-xmr)
+# globalminer:		set global miner (ethminer, sgminer-gm, claymore, claymore-zcash, optiminer-zcash, sgminer-gm-xmr, cgminer-skein, ewbf-zcash, ccminer)  
+# 			NOTE: ewbf-zcash (zcash) and ccminer (xmr, and others) is for nvidia; for ccminer flags, see http://ethosdistro.com/ccminer.txt )
 # maxgputemp:           the temperature in C that your GPUs will trigger the miner to turn off
 # stratumproxy:         enabled/disabled/miner/nicehash (enabled by default; disabled: pool option, nicehash: nicehash support, miner: internal miner proxy)
 # proxywallet:          the address to which this rig's proxy will mine (only used if stratumproxy is not disabled)
 # proxypool1:           stratum proxy's first pool (only used if stratumproxy is not disabled)
-# proxypool2:           stratum proxy's failover pool (only used if stratumproxy not disabled)
+# proxypool2:           stratum proxy's failover pool (only used if stratumproxy is not disabled)
+# poolpass1:		password for first pool (not used for most pools)
+# poolpass2:		password for failover pool (not used for most pools)
 # flags:                set desired flags here, the defaults are known good working
 # globalcore:           set the global core clock of all GPUs
 # globalmem:            set the global mem clock of all GPUs
@@ -72,7 +77,7 @@ autoreboot true
 # mem c94e13 1250 1500 1500 1250 1250
 # fan c94e13 90 80 85 100 70
 # pwr c94e13 10 20 15 15 20
-# vlt c94e13 0 1.118 0 0 1.118
+# vlt c94e13 0 1118 0 0 1118
 # ------------------------------------------------------
 #
 # SAMPLE FORMAT: 
@@ -85,6 +90,7 @@ autoreboot true
 # loc c94e13 d3
 # sel c94e13 1 2 4
 # off c94e13 
+# wallet c94e13 0x0bdC4F12fB57d3acA9C3cF72B7AA2789A20d27f2
 # driverless c94e13 enabled
 # desktop c94e13 disabled
 # ------------------------------------------------------
@@ -95,8 +101,8 @@ autoreboot true
 # mem [worker]: set the mem clock of individual GPUs on a single rig
 # fan [worker]: set the fan speed of individual GPUs on a single rig
 # pwr [worker]: set the powertune of individual GPUs on a single rig
-# vlt [worker]: set the voltage (EXPERIMENTAL, MAY NOT WORK!) of individual GPUs on a single rig
-# miner [worker]: set miner (ethminer, sgminer-gm, claymore, zcash-miner, optiminer-zcash, sgminer-gm-xmr, claymore-zcash  
+# vlt [worker]: set the voltage of individual GPUs on a single rig, in millivolts (mv) i.e. 1080mv = 1.08v
+# miner [worker]: set miner (ethminer, sgminer-gm, claymore, zcash-miner, optiminer-zcash, sgminer-gm-xmr, claymore-zcash, ewbf-zcash) ewbf-zcash is for zcash on nvidia
 # flg [worker]: set the flags of a single rig (applies to all GPUs on the rig)
 # mxt [worker]: set the maxgputemp of a single rig (applies to all GPUs on the rig)
 # reb [worker]: increment this value (example: 4 becomes 5) and the single rig will automatically reboot within 10 minutes
@@ -107,7 +113,7 @@ autoreboot true
 # desktop [worker]: login prompt user/pass is ethos/live, set ethOS to headless mode by setting like "desktop [worker] disabled" (only works for RX/AMDGPU)
 #
 # PER-BIOS STYLE CONFIG SETTINGS THAT APPLY TO CLASS OF GPU, BASED ON GPU BIOS NAME
-# DO NOT USE IN SINGLE-RIG MODE
+# ONLY USEFUL IF USING REMOTE CONFIG
 # NOTICE: 113-C6711101-100 is a SAMPLE GPU bios name, change it to the GPU bios name of YOUR GPU
 # NOTICE: For a list of GPU bioses, click the "GPU bioses" link in your ethosdistro.com stats panel
 # 
@@ -118,7 +124,7 @@ autoreboot true
 # mem 113-C6711101-100 1250
 # fan 113-C6711101-100 100
 # pwr 113-C6711101-100 50
-# vlt 113-C6711101-100 1.118
+# vlt 113-C6711101-100 1118
 # ------------------------------------------------------
 #
 # SAMPLE RX 400 SERIES CONFIG
@@ -156,13 +162,8 @@ autoreboot true
 # sgminer-gm=proxywallet 0x0bdC4F12fB57d3acA9C3cF72B7AA2789A20d27f2
 # sgminer-gm=poolpass1 x
 # sgminer-gm=poolpass2 x
+# ---------------------------------------------------------
 #
-# ------------------------------------------------------
-#
-# REMOTE REBOOT NOTES
-#
-# You are able to reboot remotely. Start with "1" (no quotes) to reboot a rig.
-# Then, if you want to reboot again, increment it to 2, then 3, then 4, etc etc (never skip any numbers).
 #
 # SAMPLE XMR CONFIG (note: the wallet and payment id is long, there are no line breaks)
 # -------------------------------------------------------
@@ -173,3 +174,18 @@ autoreboot true
 # sgminer-gm-xmr=poolpass1 x
 # sgminer-gm-xmr=poolpass2 x
 # ---------------------------------------------------------
+#
+#
+# SAMPLE DUALMINER CONFIG (for claymore)
+# ---------------------------------------------------------
+# dualminer enabled
+# dualminer-coin sia
+# dualminer-pool sia-us-east1.nanopool.org:7777
+# dualminer-wallet c3bdac90de1e328364766447440d3f192f3c920a1e88d33cf05b1de50e27b894c49d11904fda
+# ---------------------------------------------------------
+#
+#
+# REMOTE REBOOT NOTES
+#
+# You are able to reboot remotely. Start with "1" (no quotes) to reboot a rig.
+# Then, if you want to reboot again, increment it to 2, then 3, then 4, etc etc (never skip any numbers).
