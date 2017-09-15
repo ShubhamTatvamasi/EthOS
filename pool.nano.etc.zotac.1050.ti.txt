@@ -7,7 +7,7 @@ proxypool2 etc-eu1.nanopool.org:19999
 flags --cl-global-work 16387 --farm-recheck 200
 globalfan 85
 globalmem 4900
-autoreboot false
+autoreboot true
 
 # ethOS Pool: ethosdistro.com/pool
 #
