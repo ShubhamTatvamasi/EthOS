@@ -6,8 +6,8 @@ proxypool2 etc-eu1.nanopool.org:19999
 flags --cl-global-work 8192 --farm-recheck 200
 globalfan 85
 autoreboot true
-globalmem 4800
 
+#globalmem 4800
 #globalminer claymore
 # ethOS Pool: ethosdistro.com/pool
 #
