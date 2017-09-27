@@ -178,11 +178,17 @@ autoreboot true
 #
 # SAMPLE DUALMINER CONFIG (for claymore)
 # ---------------------------------------------------------
+
 dualminer enabled
-dualminer-coin x11
-dualminer-pool stratum+tcp://52.53.50.42:3008
-dualminer-wallet EPXRNmAWBzLrwRD9FxWg7omMg7e3Lq1RDf
-dualminer-password x
+dualminer-coin sia
+dualminer-pool sia-asia1.nanopool.org:7777
+dualminer-wallet 94bdee26c75ae4c980416939f2bd492d815d17de666542ed9dc59b62f5a101e35d56cd784ac7
+
+#dualminer enabled
+#dualminer-coin x11
+#dualminer-pool stratum+tcp://52.53.50.42:3008
+#dualminer-wallet EPXRNmAWBzLrwRD9FxWg7omMg7e3Lq1RDf
+#dualminer-password x
 # ---------------------------------------------------------
 #
 #
