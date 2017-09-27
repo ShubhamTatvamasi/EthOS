@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 globalminer sgminer-gm
+=======
+globalminer claymore
+>>>>>>> parent of d30c9b6... updated setting for elements coin with new software
 =======
 globalminer claymore
 >>>>>>> parent of d30c9b6... updated setting for elements coin with new software
