@@ -1,3 +1,4 @@
+globalminer claymore
 maxgputemp 85
 stratumproxy enabled
 proxywallet 0x30E7A40D2CDf87877af1E65c2ffDc476E121A0FA
@@ -7,8 +8,7 @@ flags --cl-global-work 8192 --farm-recheck 200
 globalfan 85
 autoreboot true
 
-#globalmem 4800
-#globalminer claymore
+# globalmem 4800
 # ethOS Pool: ethosdistro.com/pool
 #
 # QUICK START GUIDE: ethosdistro.com/kb/#quick-start-guide
