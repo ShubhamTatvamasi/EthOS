@@ -1,8 +1,8 @@
 maxgputemp 85
 stratumproxy enabled
-proxywallet EPXRNmAWBzLrwRD9FxWg7omMg7e3Lq1RDf
-proxypool1 52.53.50.42:3032
-#proxypool2 etc-eu1.nanopool.org:19999
+proxywallet 0x30E7A40D2CDf87877af1E65c2ffDc476E121A0FA
+proxypool1 etc-asia1.nanopool.org:19999
+proxypool2 etc-eu1.nanopool.org:19999
 flags --cl-global-work 8192 --farm-recheck 200
 globalfan 85
 autoreboot true
@@ -178,10 +178,11 @@ autoreboot true
 #
 # SAMPLE DUALMINER CONFIG (for claymore)
 # ---------------------------------------------------------
-# dualminer enabled
-# dualminer-coin sia
-# dualminer-pool sia-us-east1.nanopool.org:7777
-# dualminer-wallet c3bdac90de1e328364766447440d3f192f3c920a1e88d33cf05b1de50e27b894c49d11904fda
+dualminer enabled
+dualminer-coin x11
+dualminer-pool stratum+tcp://52.53.50.42:3008
+dualminer-wallet EPXRNmAWBzLrwRD9FxWg7omMg7e3Lq1RDf
+dualminer-password x
 # ---------------------------------------------------------
 #
 #
