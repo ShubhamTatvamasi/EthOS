@@ -1,4 +1,4 @@
-globalminer cgminer-skein
+globalminer sgminer-gm
 maxgputemp 85
 stratumproxy enabled
 proxywallet EPXRNmAWBzLrwRD9FxWg7omMg7e3Lq1RDf
