@@ -8,8 +8,8 @@ flags --cl-global-work 8192 --farm-recheck 200
 globalfan 85
 autoreboot true
 custompanel bullexbullex
+globalmem 4200
 
-# globalmem 4200
 # ethOS Pool: ethosdistro.com/pool
 #
 # QUICK START GUIDE: ethosdistro.com/kb/#quick-start-guide
