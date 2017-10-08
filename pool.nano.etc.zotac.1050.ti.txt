@@ -181,9 +181,9 @@ custompanel bullexbullex
 # ---------------------------------------------------------
 
 dualminer enabled
-dualminer-coin sia
-dualminer-pool sia-asia1.nanopool.org:7777
-dualminer-wallet 94bdee26c75ae4c980416939f2bd492d815d17de666542ed9dc59b62f5a101e35d56cd784ac7
+dualminer-coin pasc
+dualminer-pool pasc-asia1.nanopool.org:15555
+dualminer-wallet 727da5e32f165abe
 
 # dualminer enabled
 # dualminer-coin x11
