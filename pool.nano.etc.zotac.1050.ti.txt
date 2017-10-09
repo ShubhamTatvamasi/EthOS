@@ -183,7 +183,7 @@ custompanel bullexbullex
 dualminer enabled
 dualminer-coin pasc
 dualminer-pool pasc-asia1.nanopool.org:15555
-dualminer-wallet 727da5e32f165abe
+dualminer-wallet 86646-64.727da5e32f165abe
 
 # dualminer enabled
 # dualminer-coin x11
