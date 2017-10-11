@@ -1,14 +1,14 @@
 globalminer claymore
 maxgputemp 85
 stratumproxy enabled
-proxywallet 0x30E7A40D2CDf87877af1E65c2ffDc476E121A0FA
-proxypool1 etc-asia1.nanopool.org:19999
-proxypool2 etc-eu1.nanopool.org:19999
+proxywallet 0x10f08aa633374ee8b91b576e0aa988bc0c7d0ad7
+proxypool1 eth-asia1.nanopool.org:9999
+proxypool2 eth-eu1.nanopool.org:9999
 flags --cl-global-work 8192 --farm-recheck 200
 autoreboot true
 custompanel bullexbullex
 globalfan 85
-globalcore 1800
+globalcore 1723
 globalpowertune 52
 globalmem 4250
 
