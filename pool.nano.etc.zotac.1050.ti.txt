@@ -10,7 +10,7 @@ custompanel bullexbullex
 globalfan 85
 globalcore 1723
 globalpowertune 52
-globalmem 4250
+globalmem 4000
 
 # globalfan 85
 # globalcore 1723
