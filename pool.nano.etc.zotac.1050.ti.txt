@@ -10,7 +10,11 @@ custompanel bullexbullex
 globalfan 85
 globalcore 1723
 globalpowertune 52
+globalmem 4200
 
+# globalfan 85
+# globalcore 1723
+# globalpowertune 52
 # globalmem 4200
 # ethOS Pool: ethosdistro.com/pool
 #
