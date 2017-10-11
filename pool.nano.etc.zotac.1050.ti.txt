@@ -7,7 +7,7 @@ proxypool2 eth-eu1.nanopool.org:9999
 flags --cl-global-work 8192 --farm-recheck 200
 autoreboot true
 custompanel bullexbullex
-globalfan 85
+globalfan 90
 globalcore 1723
 globalpowertune 52
 globalmem 4000
