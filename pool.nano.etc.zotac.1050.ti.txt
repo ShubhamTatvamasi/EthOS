@@ -8,9 +8,9 @@ flags --cl-global-work 8192 --farm-recheck 200
 autoreboot true
 custompanel bullexbullex
 globalfan 85
-globalcore 1723
+globalcore 1800
 globalpowertune 52
-globalmem 4200
+globalmem 4300
 
 # globalfan 85
 # globalcore 1723
